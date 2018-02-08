@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script src="http://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="
+      sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+    <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
+    <script src="FriendFinder/server.js"></script>
+    <link rel="stylesheet" type="text/css" href="assets/style.css">
+    <title>Survey Questions</title>
+</head>
+
+<body>
+    <div class="wrapper">
+        <div class="row">
+            <div class="col-md-1"></div>
+            <div class="col-md-10">
+                <h3>Survey Questions</h3>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-1"></div>
+            <div class="col-md-10">
+                <h4>About You</h4>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-1"></div>
+            <div class="col-md-10">
+                <div class="input-area" col-md-10>
+                    <div class="input-name">
+                        <form method="POST" role="form">
+                            <div class="form-group">
+                                <label for="Name">Name</label>
+                                <input type="text" class="form-control" id="name" placeholder="Name">
+                            </div>
+                            <div class="form-group">
+                                <label for="imageSrc">Link to Photo Image (Required)</label>
+                                <input type="text" class="form-control" id="imageSrc" placeholder="Link To Photo Image">
+                            </div>
+                            <p>Question 1</p>
+                                <p>Your mind is always buzzing with unexplored plans and ideas</p>
+                            <div class="form-row align-items-center">
+                                
+                                    <label class="mr-sm-2" for="inlineFormCustomSelect"></label>
+                                    <select class="custom-select mr-sm-2" id="inlineFormCustomSelect" id="questionOne">
+                                        <option selected>Choose...</option>
+                                        <option value="1">1 (strongly disagree)</option>
+                                        <option value="2">2</option>
+                                        <option value="3">3</option>
+                                        <option value="4">4</option>
+                                        <option value="5">5 (strongly agree)</option>
+                                    </select>
+                                
+                            </div>
+                            <p>Question 2</p>
+                            <p>Generally speaking, you rely more on experience than your imagination</p>
+                            <div class="form-row align-items-center">
+                            
+                                <label class="mr-sm-2" for="inlineFormCustomSelect"></label>
+                                <select class="custom-select mr-sm-2" id="inlineFormCustomSelect" id="questionTwo">
+                                    <option selected>Choose...</option>
+                                    <option value="1">1 (strongly disagree)</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5 (strongly agree)</option>
+                                </select>
+                            
+                            </div>
+                            <p>Question 3</p>
+                            <p>You find it easy to stay relaxed and focused even when there is some pressure</p>
+                            <div class="form-row align-items-center">
+                            
+                                <label class="mr-sm-2" for="inlineFormCustomSelect"></label>
+                                <select class="custom-select mr-sm-2" id="inlineFormCustomSelect" id="questionThree">
+                                    <option selected>Choose...</option>
+                                    <option value="1">1 (strongly disagree)</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5 (strongly agree)</option>
+                                </select>
+                            
+                            </div>
+                            <p>Question 4</p>
+                            <p>You rarely do something just out of sheer curiosity</p>
+                            <div class="form-row align-items-center">
+                            
+                                <label class="mr-sm-2" for="inlineFormCustomSelect"></label>
+                                <select class="custom-select mr-sm-2" id="inlineFormCustomSelect" id="questionFour">
+                                    <option selected>Choose...</option>
+                                    <option value="1">1 (strongly disagree)</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5 (strongly agree)</option>
+                                </select>
+                            
+                            </div>
+                            <p>Question 5</p>
+                            <p>People can rarely upset you</p>
+                            <div class="form-row align-items-center">
+                            
+                                <label class="mr-sm-2" for="inlineFormCustomSelect"></label>
+                                <select class="custom-select mr-sm-2" id="inlineFormCustomSelect" id="questionFive">
+                                    <option selected>Choose...</option>
+                                    <option value="1">1 (strongly disagree)</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5 (strongly agree)</option>
+                                </select>
+                            
+                            </div>
+                            <p>Question 6</p>
+                            <p>It is often difficult for you to relate to other people's feelings</p>
+                            <div class="form-row align-items-center">
+                            
+                                <label class="mr-sm-2" for="inlineFormCustomSelect"></label>
+                                <select class="custom-select mr-sm-2" id="inlineFormCustomSelect" id="questionSix">
+                                    <option selected>Choose...</option>
+                                    <option value="1">1 (strongly disagree)</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5 (strongly agree)</option>
+                                </select>
+                            
+                            </div>
+                            <p>Question 7</p>
+                            <p>In a discussion, truth should be more important than people's sensitivities.</p>
+                            <div class="form-row align-items-center">
+                            
+                                <label class="mr-sm-2" for="inlineFormCustomSelect"></label>
+                                <select class="custom-select mr-sm-2" id="inlineFormCustomSelect" id="questionSeven">
+                                    <option selected>Choose...</option>
+                                    <option value="1">1 (strongly disagree)</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5 (strongly agree)</option>
+                                </select>
+                            
+                            </div>
+                            <p>Question 8</p>
+                            <p>You rarely get carried away by fantasies and ideas.</p>
+                            <div class="form-row align-items-center">
+                            
+                                <label class="mr-sm-2" for="inlineFormCustomSelect"></label>
+                                <select class="custom-select mr-sm-2" id="inlineFormCustomSelect" id="questionEight">
+                                    <option selected>Choose...</option>
+                                    <option value="1">1 (strongly disagree)</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5 (strongly agree)</option>
+                                </select>
+                            
+                            </div>
+                            <p>Question 9</p>
+                            <p>You think everyone's views should be respected regardless of whether they are supported by facts or not.</p>
+                            <div class="form-row align-items-center">
+                            
+                                <label class="mr-sm-2" for="inlineFormCustomSelect"></label>
+                                <select class="custom-select mr-sm-2" id="inlineFormCustomSelect" id="questionNine">
+                                    <option selected>Choose...</option>
+                                    <option value="1">1 (strongly disagree)</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5 (strongly agree)</option>
+                                </select>
+                            
+                            </div>
+                            <p>Question 10</p>
+                            <p>You feel more energetic after spending time with a group of people.</p>
+                            <div class="form-row align-items-center">
+                            
+                                <label class="mr-sm-2" for="inlineFormCustomSelect"></label>
+                                <select class="custom-select mr-sm-2" id="inlineFormCustomSelect" id="questionTen">
+                                    <option selected>Choose...</option>
+                                    <option value="1">1 (strongly disagree)</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5 (strongly agree)</option>
+                                </select>
+                            
+                            </div>
+                            <div class="row"></div>
+                            <button type="submit" class="btn btn-primary" id="submit-button">Submit</button>
+                            </form>
+
+                            
+                    </div>
+                </div>
+        </div>
+    </div>
+
+</body>
+<!-- <script type="text/javascript">
+    // Question: What does this code do?
+    $("#add-btn").on("click", function (event) {
+        event.preventDefault();
+        var newCharacter = {
+            name: $("#name").val().trim(),
+            role: $("#role").val().trim(),
+            age: $("#age").val().trim(),
+            forcePoints: $("#force-points").val().trim()
+        };
+
+        // Question: What does this code do??
+        // $.post("/api/new", newCharacter)
+        //     .done(function (data) {
+        //         console.log(data);
+        //         alert("Adding character...");
+        //     });
+    });
+
+
+    $("#submit-button").on('click', function (event) {
+        $(document).ready(function () {
+            $('#survey').on('click', function (event) {
+                app.get("/survey", function (req, res) {
+                    res.sendFile(path.join(__dirname, "app/public/survey.html"));
+                    console.log("button clicked")
+                });
+            });
+        });
+    });
+</script> -->
+</html>
