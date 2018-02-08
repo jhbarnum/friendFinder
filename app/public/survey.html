@@ -45,7 +45,7 @@
                             <div class="form-row align-items-center">
                                 
                                     <label class="mr-sm-2" for="inlineFormCustomSelect"></label>
-                                    <select class="custom-select mr-sm-2" id="inlineFormCustomSelect" id="questionOne">
+                                    <select class="custom-select mr-sm-2" id="questionOne">
                                         <option selected>Choose...</option>
                                         <option value="1">1 (strongly disagree)</option>
                                         <option value="2">2</option>
@@ -60,7 +60,7 @@
                             <div class="form-row align-items-center">
                             
                                 <label class="mr-sm-2" for="inlineFormCustomSelect"></label>
-                                <select class="custom-select mr-sm-2" id="inlineFormCustomSelect" id="questionTwo">
+                                <select class="custom-select mr-sm-2" id="questionTwo">
                                     <option selected>Choose...</option>
                                     <option value="1">1 (strongly disagree)</option>
                                     <option value="2">2</option>
@@ -75,7 +75,7 @@
                             <div class="form-row align-items-center">
                             
                                 <label class="mr-sm-2" for="inlineFormCustomSelect"></label>
-                                <select class="custom-select mr-sm-2" id="inlineFormCustomSelect" id="questionThree">
+                                <select class="custom-select mr-sm-2" id="questionThree">
                                     <option selected>Choose...</option>
                                     <option value="1">1 (strongly disagree)</option>
                                     <option value="2">2</option>
@@ -90,7 +90,7 @@
                             <div class="form-row align-items-center">
                             
                                 <label class="mr-sm-2" for="inlineFormCustomSelect"></label>
-                                <select class="custom-select mr-sm-2" id="inlineFormCustomSelect" id="questionFour">
+                                <select class="custom-select mr-sm-2" id="questionFour">
                                     <option selected>Choose...</option>
                                     <option value="1">1 (strongly disagree)</option>
                                     <option value="2">2</option>
@@ -105,7 +105,7 @@
                             <div class="form-row align-items-center">
                             
                                 <label class="mr-sm-2" for="inlineFormCustomSelect"></label>
-                                <select class="custom-select mr-sm-2" id="inlineFormCustomSelect" id="questionFive">
+                                <select class="custom-select mr-sm-2" id="questionFive">
                                     <option selected>Choose...</option>
                                     <option value="1">1 (strongly disagree)</option>
                                     <option value="2">2</option>
@@ -120,7 +120,7 @@
                             <div class="form-row align-items-center">
                             
                                 <label class="mr-sm-2" for="inlineFormCustomSelect"></label>
-                                <select class="custom-select mr-sm-2" id="inlineFormCustomSelect" id="questionSix">
+                                <select class="custom-select mr-sm-2" id="questionSix">
                                     <option selected>Choose...</option>
                                     <option value="1">1 (strongly disagree)</option>
                                     <option value="2">2</option>
@@ -135,7 +135,7 @@
                             <div class="form-row align-items-center">
                             
                                 <label class="mr-sm-2" for="inlineFormCustomSelect"></label>
-                                <select class="custom-select mr-sm-2" id="inlineFormCustomSelect" id="questionSeven">
+                                <select class="custom-select mr-sm-2" id="questionSeven">
                                     <option selected>Choose...</option>
                                     <option value="1">1 (strongly disagree)</option>
                                     <option value="2">2</option>
@@ -150,7 +150,7 @@
                             <div class="form-row align-items-center">
                             
                                 <label class="mr-sm-2" for="inlineFormCustomSelect"></label>
-                                <select class="custom-select mr-sm-2" id="inlineFormCustomSelect" id="questionEight">
+                                <select class="custom-select mr-sm-2" id="questionEight">
                                     <option selected>Choose...</option>
                                     <option value="1">1 (strongly disagree)</option>
                                     <option value="2">2</option>
@@ -165,7 +165,7 @@
                             <div class="form-row align-items-center">
                             
                                 <label class="mr-sm-2" for="inlineFormCustomSelect"></label>
-                                <select class="custom-select mr-sm-2" id="inlineFormCustomSelect" id="questionNine">
+                                <select class="custom-select mr-sm-2" id="questionNine">
                                     <option selected>Choose...</option>
                                     <option value="1">1 (strongly disagree)</option>
                                     <option value="2">2</option>
@@ -180,7 +180,7 @@
                             <div class="form-row align-items-center">
                             
                                 <label class="mr-sm-2" for="inlineFormCustomSelect"></label>
-                                <select class="custom-select mr-sm-2" id="inlineFormCustomSelect" id="questionTen">
+                                <select class="custom-select mr-sm-2" id="questionTen">
                                     <option selected>Choose...</option>
                                     <option value="1">1 (strongly disagree)</option>
                                     <option value="2">2</option>
@@ -201,16 +201,41 @@
     </div>
 
 </body>
+<script>
+    $("#submit-button").on("click", function (event) {
+            event.preventDefault();
+    
+        var friends = {
+        name: $("#name").val(),
+        photo: $("#imageSrc").val(),
+        scores: [$("#questionOne").val(),
+        $("#questionTwo").val(),
+        $("#questionThree").val(),
+        $("#questionFour").val(),
+        $("#questionFive").val(),
+        $("#questionSix").val(),
+        $("#questionSeven").val(),
+        $("#questionEight").val(),
+        $("#questionNine").val(),
+        $("#questionTen").val()
+        ]
+    };
+    function consoling(){
+    console.log(friends)
+    };
+    consoling();
+});
+</script>
 <!-- <script type="text/javascript">
-    // Question: What does this code do?
-    $("#add-btn").on("click", function (event) {
-        event.preventDefault();
-        var newCharacter = {
-            name: $("#name").val().trim(),
-            role: $("#role").val().trim(),
-            age: $("#age").val().trim(),
-            forcePoints: $("#force-points").val().trim()
-        };
+//     // Question: What does this code do?
+//     $("#add-btn").on("click", function (event) {
+//         event.preventDefault();
+//         var newCharacter = {
+//             name: $("#name").val().trim(),
+//             role: $("#role").val().trim(),
+//             age: $("#age").val().trim(),
+//             forcePoints: $("#force-points").val().trim()
+//         };
 
         // Question: What does this code do??
         // $.post("/api/new", newCharacter)
@@ -221,15 +246,6 @@
     });
 
 
-    $("#submit-button").on('click', function (event) {
-        $(document).ready(function () {
-            $('#survey').on('click', function (event) {
-                app.get("/survey", function (req, res) {
-                    res.sendFile(path.join(__dirname, "app/public/survey.html"));
-                    console.log("button clicked")
-                });
-            });
-        });
-    });
+  
 </script> -->
 </html>
