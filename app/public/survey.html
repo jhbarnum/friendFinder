@@ -220,35 +220,38 @@
         ]
     };
     function consoling(){
-    console.log(friends);
+    console.log(friends.scores[0]);
     };
     consoling();
-        $.post("/api/friends.js", friends) 
+    $.post("/api/friends.js", friends, function(data) {
             
-        
+        $("#name").val(""),
+        $("#imageSrc").val(""),
+        $("#questionOne").val("");
+        $("#questionTwo").val("");
+        $("#questionThree").val("");
+        $("#questionFour").val("");
+        $("#questionFive").val("");
+        $("#questionSix").val("");
+        $("#questionSeven").val("");
+        $("#questionEight").val("");
+        $("#questionNine").val("");
+        $("#questionTen").val("");
+
+        // function scoreDiff() {
+           
+        //     var compatabilityDiff = [];   
+        //     for (var i = 0; i< friends.scores.length; i++) {
+                
+        //         compatabilityDiff[i] = friends.scores[i] - friendsArr.scores[i];
+        //         console.log(compatabilityDiff[i])
+        //     }
+            
+            
+        // }
+        // scoreDiff();
+    });
 });
 
 </script>
-<!-- <script type="text/javascript">
-//     // Question: What does this code do?
-//     $("#add-btn").on("click", function (event) {
-//         event.preventDefault();
-//         var newCharacter = {
-//             name: $("#name").val().trim(),
-//             role: $("#role").val().trim(),
-//             age: $("#age").val().trim(),
-//             forcePoints: $("#force-points").val().trim()
-//         };
-
-        // Question: What does this code do??
-        // $.post("/api/new", newCharacter)
-        //     .done(function (data) {
-        //         console.log(data);
-        //         alert("Adding character...");
-        //     });
-    });
-
-
-  
-</script> -->
 </html>

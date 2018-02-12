@@ -1,11 +1,18 @@
 const path = require('path');
 const friendsArr = require(path.join(__dirname, '../data/friends.js'));
 console.log('api route connected')
+const bodyParser   =    require('body-parser');
+
+
 console.log(friendsArr);
 
 
 
 function apiRouteExport(app) {
+
+    app.use(bodyParser.urlencoded({
+        extended: false
+    }));
 //    * This will be used to display a JSON of all possible friends.
     app.get("/api/friends", function (req, res) {
         return res.json(friendsArr);
@@ -23,6 +30,15 @@ function apiRouteExport(app) {
         friendsArr.push(req.body);
         console.log("post");
         res.json(friendsArr);
+var userInput = req.body;
+
+
+        console.log("----------" + JSON.stringify(userInput.scores))
+        //console.log("----------" + JSON.parse(friendsArr))
+        var ourScores = friendsArr[friendsArr.length - 1].scores;
+        console.log(ourScores)
     });
 }
+
+console.log("----------" + friendsArr + "--------")
 module.exports = apiRouteExport;
