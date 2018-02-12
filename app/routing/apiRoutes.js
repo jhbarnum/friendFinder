@@ -1,15 +1,17 @@
 const path = require('path');
 
+console.log('api route connected')
 
 
-var friendsArr = require(path.join(__dirname, '../data/friends.js'));
+// var friendsArr = require(path.join(__dirname, '../data/friends.js'));
 
-module.exports = function (app) {
+function apiRouteExport(app) {
 //   * A GET route with the url`/api/friends`.
 //    * This will be used to display a JSON of all possible friends.
     app.get("/api/friends", function (req, res) {
     //var chosen = req.params.friends;
         return res.json(friendsArr);
+        console.log("get");
     });
 
 
@@ -21,6 +23,7 @@ module.exports = function (app) {
     // req.body hosts is equal to the JSON post sent from the user
     // This works because of our body-parser middleware
         friendsArr.push(req.body);
-
+        console.log("post");
     });
 }
+module.exports = apiRouteExport;
