@@ -28,17 +28,50 @@ function apiRouteExport(app) {
     // req.body hosts is equal to the JSON post sent from the user
     // This works because of our body-parser middleware
         friendsArr.push(req.body);
-        console.log("post");
         res.json(friendsArr);
-var userInput = req.body;
+        var userInput = req.body;
 
-
-        console.log("----------" + JSON.stringify(userInput.scores))
-        //console.log("----------" + JSON.parse(friendsArr))
+        parseInt(userInput.scores);
+        
         var ourScores = friendsArr[friendsArr.length - 1].scores;
-        console.log(ourScores)
+
+        function findFriend() {
+            var friendFound ;
+            var matchArr = [];
+            for (var i = 0; i < friendsArr.length -1; i ++) {
+                
+                    // Initialize our difference value.
+                    var totalDiff = 0;
+
+                    // Grab the scores of this particular friend.
+                    var friendScores = friendsArr[i].scores;
+                console.log(friendsArr[i].name + "///////")
+                    // Determine totalDifference for this friend.
+                    for (var t = 0; t < friendScores.length; t++) {
+                        var ourScore = parseInt(ourScores[t]);
+                        var friendScore = parseInt(friendScores[t]);
+                        var diff = Math.abs(ourScore - friendScore);
+                        totalDiff += diff;
+                        
+                    }
+                   matchArr[i] = totalDiff;
+                console.log(totalDiff)
+                console.log(matchArr[i])
+
+                if (matchArr[i] < matchArr[i -1]) {
+                    friendFound = friendsArr[i];
+                    
+                }
+            }
+            
+            return {
+                "name": friendFound.name,
+                "photo": friendFound.photo
+            };
+        }
+        findFriend();
     });
 }
 
-console.log("----------" + friendsArr + "--------")
+
 module.exports = apiRouteExport;

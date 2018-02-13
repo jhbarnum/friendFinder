@@ -190,17 +190,59 @@
                             
                             </div>
                             <div class="row"></div>
-                            <button type="submit" class="btn btn-primary" id="submit-button">Submit</button>
+                            <button type="submit" class="btn btn-primary" id="submit-button" data-toggle="modal" data-target="#exampleModalLong">Submit</button>
                             </form>
 
-                            
+                            <!-- Button trigger modal -->
+                            <!-- <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalLong">
+                                Launch demo modal
+                            </button> -->
                     </div>
                 </div>
         </div>
     </div>
+    <br>
+    <footer class="footer">
+        <div class="container">
+            <p>
+            <a href="/api/friends">API Friends List</a>
+            </p>
+        </div>
+    </footer>
 
-</body>
-<script>
+    </div>
+
+    <div id="results-modal" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+
+        
+            <div class="modal-content">
+                <div class="modal-header">
+                 <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h2 class="modal-title">
+                        <strong>New Best Friend</strong>
+                    </h2>
+                </div>
+                <div class="modal-body">
+                    <h2 id="match-name"></h2>
+                    <img id="match-img" src="" alt="">
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    
+    
+    
+   
+
+    <script src="https://code.jquery.com/jquery.js"></script>
+    
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.bundle.min.js"></script>
+    <script>
     $("#submit-button").on("click", function (event) {
             event.preventDefault();
     
@@ -219,12 +261,17 @@
         $("#questionTen").val()
         ]
     };
-    function consoling(){
-    console.log(friends.scores[0]);
-    };
-    consoling();
+   
+    
     $.post("/api/friends.js", friends, function(data) {
             
+        $("#match-name").text(data.name);
+        $("#match-img").attr("src", data.photo);
+        // Show the modal with the best match
+        $("#results-modal").modal("toggle");
+        console.log(data.name)
+
+
         $("#name").val(""),
         $("#imageSrc").val(""),
         $("#questionOne").val("");
@@ -238,18 +285,9 @@
         $("#questionNine").val("");
         $("#questionTen").val("");
 
-        // function scoreDiff() {
-           
-        //     var compatabilityDiff = [];   
-        //     for (var i = 0; i< friends.scores.length; i++) {
-                
-        //         compatabilityDiff[i] = friends.scores[i] - friendsArr.scores[i];
-        //         console.log(compatabilityDiff[i])
-        //     }
-            
-            
-        // }
-        // scoreDiff();
+
+        
+       
     });
 });
 
