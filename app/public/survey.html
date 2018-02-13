@@ -189,6 +189,7 @@
                                 </select>
                             
                             </div>
+                            <br>
                             <div class="row"></div>
                             <button type="submit" class="btn btn-primary" id="submit-button" data-toggle="modal" data-target="#exampleModalLong">Submit</button>
                             </form>
@@ -225,7 +226,7 @@
                 </div>
                 <div class="modal-body" align="center">
                     <h2 id="match-name"></h2>
-                    <img id="match-img" src="" alt="Image Not Found">
+                    <img id="match-img" src="" alt="Image Not Found" width="auto">
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
@@ -265,11 +266,11 @@
     
     $.post("/api/friends.js", friends, function(data) {
             
-        $("#match-name").text(friends.name);
-        $("#match-img").attr("src", friends.photo);
+        $("#match-name").text(data[1].name);
+        $("#match-img").attr("src", data[1].photo);
         // Show the modal with the best match
         $("#results-modal").modal("toggle");
-        console.log(friends.name)
+        console.log(data[1].name + " data[1]")
 
 
         $("#name").val(""),
