@@ -4,7 +4,7 @@ console.log('api route connected')
 const bodyParser   =    require('body-parser');
 
 
-console.log(friendsArr);
+//console.log(friendsArr);
 
 
 
@@ -45,7 +45,7 @@ function apiRouteExport(app) {
 
                     // Grab the scores of this particular friend.
                     var friendScores = friendsArr[i].scores;
-                console.log(friendsArr[i].name + "///////")
+
                     // Determine totalDifference for this friend.
                     for (var t = 0; t < friendScores.length; t++) {
                         var ourScore = parseInt(ourScores[t]);
@@ -63,7 +63,7 @@ function apiRouteExport(app) {
                     
                 }
             }
-            
+            console.log(friendFound.name + "///////")
             return {
                 "name": friendFound.name,
                 "photo": friendFound.photo

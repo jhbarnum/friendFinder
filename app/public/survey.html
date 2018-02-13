@@ -223,9 +223,9 @@
                         <strong>New Best Friend</strong>
                     </h2>
                 </div>
-                <div class="modal-body">
+                <div class="modal-body" align="center">
                     <h2 id="match-name"></h2>
-                    <img id="match-img" src="" alt="">
+                    <img id="match-img" src="" alt="Image Not Found">
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
@@ -265,11 +265,11 @@
     
     $.post("/api/friends.js", friends, function(data) {
             
-        $("#match-name").text(data.name);
-        $("#match-img").attr("src", data.photo);
+        $("#match-name").text(friends.name);
+        $("#match-img").attr("src", friends.photo);
         // Show the modal with the best match
         $("#results-modal").modal("toggle");
-        console.log(data.name)
+        console.log(friends.name)
 
 
         $("#name").val(""),
